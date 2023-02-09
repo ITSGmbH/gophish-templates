@@ -1,0 +1,9 @@
+
+Guten Tag {{.FirstName}} {{.LastName}}
+
+Im Ramen der anstehenden Umstellung auf *GE Cares* müssen alle Mittarbeiterdaten auf das neue System übernommen werden.
+Bitte melden Sie sich mit dem nachfolgenden Link an um den Prozess zu starten.
+
+Meine Daten übernehmen: {{.URL}}
+
+Besten Dank für die prompte Bearbeitung.

